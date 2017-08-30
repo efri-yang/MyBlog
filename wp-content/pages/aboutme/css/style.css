@@ -21,7 +21,7 @@
 .aboutme-table-box{
 	padding: 20px 30px;
 }
-.aboutme-table{
+/*.aboutme-table{
 	border:1px solid #e6e6e6;
 	width: 100%;
 }
@@ -65,10 +65,52 @@
 .aboutme-intro p{
 	text-indent: 2em;
 	margin-bottom: 15px;
+}*/
+.aboutme-intro{
+	font-size: 16px;
+	line-height: 1.8
 }
+.aboutme-intro p{
+	text-indent: 2em;
+	margin-bottom: 15px;
+}
+.aboutme-zj-list a {
+    text-decoration: underline;
+    color: #339dd2;
+}
+
+.aboutme-zj-list li {
+    padding: 15px 15px;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.aboutme-zj-list li:last-child {
+    border-bottom: none;
+}
+
+.aboutme-zj-list li p {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 5px;
+}
+.
+/**************/
 .aboutme-table-project{
 	font-size: 16px;
 	line-height: 2;
+	border:1px solid #e6e6e6;
+	width: 100%;
+
+}
+.aboutme-table-project td{
+	padding:15px 10px;
+	border:1px solid #f60;
+	font-size: 16px;
+
+}
+.aboutme-table-project th{
+	padding: 20px 0;
+	text-align: center;
 }
 .aboutme-table-project .center{
 	text-align: center;
@@ -80,9 +122,16 @@
 	text-indent: 2rem;
 }
 .yhcc-qrcode{
-	width: 188px;
-	height: 249px;
-	background: url("../images/001.png") no-repeat top center;
+	width: 150px;
+	height: 150px;
+	margin:0 auto;
+	background: url("../images/erweima.jpg") no-repeat top center;
+}
+.nd-qrcode{
+	width: 150px;
+	height: 150px;
+	margin:0 auto;
+	background: url("../images/xzqrcode.jpg") no-repeat top center;
 }
 .mygithub{
 	padding: 15px 0;
