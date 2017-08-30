@@ -1,0 +1,133 @@
+<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+			<span class="discuss"><i class="iconfont icon-pinglun"></i><?php comments_popup_link('评论', __( '1' ), __( '% 条评论') ); ?></span>
+			<?php endif; ?>
+
+
+
+			(function($){
+	var GoTop=function(element, options){
+		this.$element  = $(element);
+    	this.options   = $.extend({}, GoTop.Default, options);
+    	this.Timer=null;
+	}
+	GoTop.Defaults={
+		"speed":800,
+		"distance":500
+	}
+	GoTop.prototype.throttle=function(method,context){
+ 		clearTimeout(this.Timer);
+        this.Timer=setTimeout(function(){
+            method.call(context) //改变作用域  
+        },250)   
+	}
+	GoTop.prototype.scrolling=function(){
+		console.log("xxx")
+	}
+	function Plugin(option){
+		return this.each(function(){
+			var $this   = $(this);
+      		var data    = $this.data('wn.GoTop');
+      		var options = typeof option == 'object' && option;
+      		if(!data){
+      			console.log("click");
+      			$this.data('wn.GoTop',(data = new GoTop(this, options)));
+      			$(window).on("scroll",data.throttle(data.scrolling));
+      		}
+      		
+		})
+	}
+	$(window).on("scroll",function(){
+		
+	})
+	$(document).on("click.wn.GoTop.data-api",'[data-roler="gotop"]',function(event){
+		var $target=$(event.target);
+		if (!$target.hasClass('scrolltop')) $target = $target.closest('.scrolltop');
+		var href    =$target.attr('data-speed');
+		var distance=$target.attr("data-distance");
+		
+		Plugin.call($target,'');
+		event.preventDefault();
+	})
+})(jQuery)
+
+
+<title><?php seo_title($s); ?></title>
+	<meta content="<?php seo_keywordDescription('keyword');?>" name="keywords">
+	<meta content="<?php seo_keywordDescription('description');?>" name="description">
+
+
+	function seo_title($s){
+	if (is_home () ) { 
+		bloginfo('name'); 
+	} elseif ( is_category() ) { 
+		single_cat_title();echo' - ';bloginfo('name'); 
+	} elseif (is_single() || is_page() ) { 
+		single_post_title(); 
+	}elseif (is_search() ) { 
+		echo wp_specialchars($s)." – "."蜗牛部落搜索";
+	} else { 
+		wp_title('',true);
+	}
+}
+
+
+/**
+ * 通过页面->新建页面而得来
+ * 如果是首页
+ */
+
+function seo_keywordDescription($name='keyword'){
+	$keywords='';
+	$description = '';
+	
+
+	if (is_home()) {
+	   // 将以下引号中的内容改成你的主页description
+	   $description = "蜗牛世界(wnworld.com)是一个关于web技术的博客,主要以学习和分享为主，致力于和广大的热爱编码的人一起探讨成长,实现互联网的Web开发，以此改善用户体验，蜗牛世界有你更精彩！";
+
+	   // 将以下引号中的内容改成你的主页keywords
+	   $keywords = "蜗牛世界,蜗牛博客,蜗牛部落,蜗牛前端开发";
+	}
+	elseif (is_single()) {
+	   $post = get_post();
+	   $description1 = $post->post_excerpt;
+	   $description2 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_content), 0, 200, "…", 'utf-8'));
+
+	   // 填写自定义字段description时显示自定义字段的内容，否则使用文章内容前200字作为描述
+	   $description = $description1 ? $description1 : $description2;
+	   
+	   // 填写自定义字段keywords时显示自定义字段的内容，否则使用文章tags作为关键词
+	   $keywords = get_post_meta($post->ID, "keywords", true);
+	   if($keywords == '') {
+	      $tags = wp_get_post_tags($post->ID);    
+	      foreach ($tags as $tag ) {        
+	         $keywords = $keywords . $tag->name . ", ";    
+	      }
+	      $keywords = rtrim($keywords, ', ');
+	   }
+	}elseif (is_category()) {
+		$cat = get_query_var('cat');
+		$yourcat = get_category($cat);
+		$slug=$yourcat->slug;
+		$keyword=single_cat_title('', false);
+		if($slug=='frontend'){
+			$keywords="蜗牛web前端学习,蜗牛前端,蜗牛web前端";
+		}else if($slug=='houduan'){
+			$keywords="蜗牛php学习,蜗牛mysql学习";
+		}else if($slug=='suisuiyu'){
+			$keywords="蜗牛说说,蜗牛日志";
+		}
+	   // 分类的description可以到后台 - 文章 -分类目录，修改分类的描述
+	   $description = str_replace("\n","",mb_strimwidth(strip_tags(category_description()), 0, 200, "…", 'utf-8'));  
+	}elseif (is_tag()){
+	   // 标签的description可以到后台 - 文章 - 标签，修改标签的描述
+	   $description = tag_description();
+	   $keywords = single_tag_title('', false);
+	}
+ 	
+ 	if($name=="keyword"){
+ 		echo  $keywords;
+ 	}else{
+ 		echo  $description;
+ 	}
+}

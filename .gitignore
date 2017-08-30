@@ -1,0 +1,13 @@
+﻿.idea
+node_modules/
+.git
+build/
+gulp/
+A小鱼日常/
+.tmp/
+dev/
+APSD/
+dist/
+sql/*.sql
+sql/**/*.csv
+wp-config.php

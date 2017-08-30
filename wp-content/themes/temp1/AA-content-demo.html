@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>网站模板</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/wnstyle.css">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</head>
+
+<body>
+    <style type="text/css">
+        .box-main{
+            padding-right: 0
+        }
+        .sidebar{display: none;}
+        .dp-table .td1{font-weight: bold;}
+        .dp-table .td4{ text-align: left}
+
+    </style>
+    <!-- ***** 头部模板 start ***** -->
+    <div class="header">
+        <div class="wn-container">
+            <div class="logo" title="蜗牛世界"></div>
+            <div class="logo-m">蜗牛世界</div>
+            <nav class="main-nav">
+                <ul id="main-navlist">
+                    <li><a href="http://wnworld.com/">首页</a></li>
+                    <li><a href="http://wnworld.com/archives/category/frontend">前端开发</a>
+                        <ul class="sub-menu">
+                            <li><a href="http://wnworld.com/archives/category/frontend/css">Css</a></li>
+                            <li><a href="http://wnworld.com/archives/category/frontend/javascript">Javascript</a></li>
+                            <li><a href="http://wnworld.com/archives/category/frontend/%e5%b7%a5%e5%85%b7">工具</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://wnworld.com/archives/category/houduan">后端学习</a>
+                        <ul class="sub-menu">
+                            <li><a href="http://wnworld.com/archives/category/houduan/phpmysql">PHP&#038;MySql</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://wnworld.com/archives/category/suisuiyu">那些事儿</a></li>
+                    <li class="current-menu-item"><a href="http://wnworld.com/aboutme">关于散崖</a></li>
+                </ul>
+            </nav>
+            <div class="main-navbar-toggle" id="J_main-navbar-toggle"><i class="iconfont icon-fenlei"></i></div>
+        </div>
+    </div>
+    <!-- ***** 头部模板 end ***** -->
+    <!-- ***** 标语***** start -->
+    <div class="header-font"></div>
+    <!-- ***** 标语***** end -->
+    <div class="wn-container clearfix wn-container-pt">
+        <div class="box-main">
+            <!-- ************start************ -->
+            <div class="content-container">
+                <h1 class="dp-tit">infinitescroll 参数</h1>
+                <div class="dp-bar">
+                    <span><i class="iconfont icon-time"></i>2015-11-29</span>
+                    <span><i class="iconfont icon-icon-admin"></i>散崖</span>
+                    <!-- <span><i class="iconfont icon-iconfont90"></i><a href="http://wnworld.com/archives/category/frontend/css" rel="category tag">Css</a></span> -->
+                    <span class="dp-readnum"><b>14</b>人已阅读</span>
+                </div>
+                <div class="dp-content">
+                    <p>
+                        <strong><span style="font-size:18px;">infinitescroll  参数解释</span></strong>
+                    </p>
+                    
+                    <table class="dp-table">
+                        <tr>
+                            <th width="20%" colspan="2">参数</th>
+                            <th width="13%">类型</th>
+                            <th width="42%">描述</th>
+                            <th width="25%">默认值</th>
+                        </tr>
+                        <tr>
+                            <td class="td1" rowspan="8">loading</td>
+                            <td class="td2">finished</td>
+                            <td class="td3">Function</td>
+                            <td class="td4">每次加载完成后触发该函数</td>
+                            <td class="td5">undefined</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">finishedMsg</td>
+                            <td class="td3">String</td>
+                            <td class="td4">所有数据加载完成提示文字(它会在间隔speed后消失)</td>
+                            <td class="td5"><pre>&lt;em&gt;Congratulations, you've reached the end of the internet.&lt;/em&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td class="td2">img</td>
+                            <td class="td3">String</td>
+                            <td class="td4">加载的时候,显示的loading.gif 图片</td>
+                            <td class="td5">一张图片地址(data:image/gif...)</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">msg</td>
+                            <td class="td3">Object</td>
+                            <td class="td4">如何不想使用官方提供的方式，可以在这个进行自定义(需要传入<pre>$("&lt;div&gt;加载中...&lt;/div&gt;"))jquery对象</pre></td>
+                            <td class="td5">null</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">msgText</td>
+                            <td class="td3">String</td>
+                            <td class="td4">加载的时候提示文字(比如："加载中...")</td>
+                            <td class="td5"><pre>&lt;em&gt;Loading the next set of posts...&lt;/em&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td class="td2">selector</td>
+                            <td class="td3">String</td>
+                            <td class="td4">上面参数msg(显示加载中...)要存放在哪个容器,它的值是一个选择的值</td>
+                            <td class="td5">null</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">speed</td>
+                            <td class="td3">String | Number</td>
+                            <td class="td4">msg信息消失的速度,可以"fast"或者是数字100</td>
+                            <td class="td5">fast</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">start</td>
+                            <td class="td3">Function</td>
+                            <td class="td4">每次ajax的时候触发该函数</td>
+                            <td class="td5">undefined</td>
+                        </tr>
+                         <tr>
+                            <td class="td1" rowspan="7">state</td>
+                            <td class="td2">isDuringAjax</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4"></td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">isInvalidPage</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4"></td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">isDestroyed</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">处在destroyed状态</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">isDone</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">加载完毕</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">isPaused</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">处在暂停状态</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">isBeyondMaxPage</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4"></td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td2">currPage</td>
+                            <td class="td3">Number</td>
+                            <td class="td4">当前页数</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">debug</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">启用调试信息，若启用必须引入debug.js </td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">behavior</td>
+                            <td class="td3"></td>
+                            <td class="td4"></td>
+                            <td class="td5">$(window)</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">binder</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4"></td>
+                            <td class="td5">false</td>
+                        </tr>
+                         <tr>
+                            <td class="td1" colspan="2">navSelector</td>
+                            <td class="td3">String</td>
+                            <td class="td4">分页容器(用来存放参数nextSelector的容器)</td>
+                            <td class="td5">div.navigation</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">nextSelector</td>
+                            <td class="td3">String</td>
+                            <td class="td4">下一页链接的选择器</td>
+                            <td class="td5">div.navigation a:first</td>
+                        </tr>
+                       
+                        <tr>
+                            <td class="td1" colspan="2">contentSelector</td>
+                            <td class="td3">String</td>
+                            <td class="td4">选择器字符串</td>
+                            <td class="td5">null</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">extraScrollPx</td>
+                            <td class="td3">Number</td>
+                            <td class="td4">滚动条距离底部多少像素的时候开始加载</td>
+                            <td class="td5">150</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">itemSelector</td>
+                            <td class="td3"></td>
+                            <td class="td4"></td>
+                            <td class="td5">div.post</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">animate</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">当有新数据加载进来的时候，页面是否有动画效果</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">animate</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">当有新数据加载进来的时候，页面是否有动画效果</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">pathParse</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">当有新数据加载进来的时候，页面是否有动画效果</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">dataType</td>
+                            <td class="td3">String</td>
+                            <td class="td4">从服务端返回的数据类型</td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">appendCallback</td>
+                            <td class="td3">Boolean</td>
+                            <td class="td4">正常设置为false</td>
+                            <td class="td5">true</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">bufferPx</td>
+                            <td class="td3">Number</td>
+                            <td class="td4">提示语展现的时长，数字越大，展现时间越短</td>
+                            <td class="td5">40</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">errorCallback</td>
+                            <td class="td3">Function</td>
+                            <td class="td4">ajax请求数据的时候，发生错误就触发该函数</td>
+                            <td class="td5">function () { }</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">infid</td>
+                            <td class="td3">Number</td>
+                            <td class="td4">示例的id，用于区分页面多次用到这个插件</td>
+                            <td class="td5">0</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">pixelsFromNavToBottom</td>
+                            <td class="td3"></td>
+                            <td class="td4"></td>
+                            <td class="td5">undefined</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">path</td>
+                            <td class="td3">Function</td>
+                            <td class="td4">该函数用来返回url地址(path: function(index) {
+                return "php/infinitescroll.php?page=" + index +"&step=5";
+              })</td>
+                            <td class="td5">undefined</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">prefill</td>
+                            <td class="td3"></td>
+                            <td class="td4"></td>
+                            <td class="td5">false</td>
+                        </tr>
+                        <tr>
+                            <td class="td1" colspan="2">maxPage</td>
+                            <td class="td3">Number</td>
+                            <td class="td4">允许ajax最大的页数</td>
+                            <td class="td5">undefined</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dp-share  clearfix">
+                    <div class="dp-share-detail">
+                        <!-- 百度分享 start -->
+                        <div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1449408086689">
+                            <a href="#" class="bds_more" data-cmd="more"></a>
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                            <a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a>
+                        </div>
+                        <script>
+                        window._bd_share_config = {
+                            "common": {
+                                "bdSnsKey": {},
+                                "bdText": "",
+                                "bdMini": "2",
+                                "bdMiniList": [],
+                                "bdPic": "",
+                                "bdStyle": "0",
+                                "bdSize": "24"
+                            },
+                            "share": {},
+                            "image": {
+                                "viewList": ["weixin", "tsina", "qzone", "sqq", "ty"],
+                                "viewText": "分享到：",
+                                "viewSize": "16"
+                            }
+                        };
+                        with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                        </script>
+                        <!-- 百度分享 end -->
+                    </div>
+                </div>
+            </div>
+            <!-- ************end************** -->
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <div class="hd">阅读排行</div>
+                <ul class="sidebar-hotlist">
+                    <li><a href="#">js的类数组对象</a> (230)</li>
+                    <li><a href="#">sublime Text 安装和使用</a> (194)</li>
+                    <li><a href="#">transform 兼容</a> (123)</li>
+                    <li><a href="#">js处理css3动画事件</a> (122)</li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <div class="hd">阅读排行</div>
+                <ul class="wzgd sidebar-list">
+                    <li><a href="http://wnworld.com/archives/date/2015/11">2015年十一月</a>&nbsp;(1)</li>
+                    <li><a href="http://wnworld.com/archives/date/2015/10">2015年十月</a>&nbsp;(2)</li>
+                    <li><a href="http://wnworld.com/archives/date/2015/09">2015年九月</a>&nbsp;(5)</li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <div class="hd">阅读排行</div>
+                <ul class="wzfl sidebar-list">
+                    <li><a href="#">前端开发</a>
+                        <ul>
+                            <li><a href="#">Css</a></li>
+                            <li><a href="#">Javascript</a></li>
+                            <li><a href="#">工具</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">那些事儿</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 蜗牛博客 <span>948061564@qq.com</span> </p>
+        <p class="icp-no"><a href="http://www.miitbeian.gov.cn/" target="_blank">闽ICP备11007881号</a></p>
+    </div>
+    <div class="scrollbtn-list">
+        <a href="#" id="J_exchangelink" class="exchangelink" title="交换友情链接">交换友情链接</a>
+        <!--  <a href="#" id="J_screenzoom"  class="screenzoom" title="宽屏"><i class="iconfont icon-quanping icon-quanping"></i></a> -->
+        <a href="#" title="返回顶部" class="scrolltop" id="J_gotop"><i class="iconfont icon-fanhuidingbu"></i></a>
+    </div>
+</body>
+
+</html>

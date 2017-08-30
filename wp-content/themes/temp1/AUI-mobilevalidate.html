@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>网站模板</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/wnstyle.css">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../pages/mobilevalidate/css/style.css">
+</head>
+
+<body>
+    <!-- ***** 头部模板 start ***** -->
+    <div class="header">
+        <div class="wn-container">
+            <div class="logo" title="蜗牛世界"></div>
+            <div class="logo-m">蜗牛世界</div>
+            <nav class="main-nav">
+                <ul id="main-navlist">
+                    <li><a href="http://wnworld.com/">首页</a></li>
+                    <li><a href="http://wnworld.com/archives/category/frontend">前端开发</a>
+                        <ul class="sub-menu">
+                            <li><a href="http://wnworld.com/archives/category/frontend/css">Css</a></li>
+                            <li><a href="http://wnworld.com/archives/category/frontend/javascript">Javascript</a></li>
+                            <li><a href="http://wnworld.com/archives/category/frontend/%e5%b7%a5%e5%85%b7">工具</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://wnworld.com/archives/category/houduan">后端学习</a>
+                        <ul class="sub-menu">
+                            <li><a href="http://wnworld.com/archives/category/houduan/phpmysql">PHP&#038;MySql</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://wnworld.com/archives/category/suisuiyu">那些事儿</a></li>
+                    <li class="current-menu-item"><a href="http://wnworld.com/aboutme">关于散崖</a></li>
+                </ul>
+            </nav>
+            <div class="main-navbar-toggle" id="J_main-navbar-toggle"><i class="iconfont icon-fenlei"></i></div>
+        </div>
+    </div>
+    <!-- ***** 头部模板 end ***** -->
+    <!-- ***** 标语***** start -->
+    <div class="header-font"></div>
+    <!-- ***** 标语***** end -->
+    <div class="wn-container clearfix wn-container-pt">
+        <div class="zui-compontent-box">
+            <h1 class="compontent-name">移动端表单验证控件(mobileValidate) <a class="wn-btn wn-btn-success download-git" href="https://github.com/efri-yang/mobileValidate/archive/master.zip">下载</a> <a class="wn-btn wn-btn-success download-git" href="https://github.com/efri-yang/mobileValidate/">GitHub</a></h1>
+            <div class="compontent-bar">
+                <span>GitHub地址：<a href="https://github.com/efri-yang/mobileValidate" target="_blank">https://github.com/efri-yang/mobileValidate</a></span>
+                <div class="compontent-bar-share"><div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+        <a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a>
+    </div>
+    <script>
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "24"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <!-- 百度分享 end -->
+</div></div>
+            <div class="tit-level-1">一、Demo</div>
+            <div class="mvalidate-demo clearfix">
+                <div class="mvalidate-demo-l">
+                    <table class="mvalidate-tbl-1">
+                        <tr>
+                            <th>验证类型1</th>
+                        </tr>
+                         <tr>
+                            <td>
+                                <iframe class="iframe-box" src="../../pages/mobilevalidate/demo/validate1.html" height="690px" width="100%"></iframe>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mvalidate-demo-r">
+                     <table class="mvalidate-tbl-1">
+                        <tr>
+                            <th>验证类型2</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <iframe class="iframe-box" src="../../pages/mobilevalidate/demo/validate2.html" height="690px" width="100%"></iframe>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tit-level-1">二、Options参数</div>
+            <table class="demo-table">
+               <tbody><tr>
+                   <th width="20%">参数</th>
+                   <th width="60%" class="align-l">描述</th>
+                   <th width="20%">默认值</th>
+               </tr>
+               <tr>
+                   <td>type</td>
+                   <td class="align-l">表单验证类型,有两种:类型1：弹出提示信息，类型2：未通过验证的表单下面显示提示文字</td>
+                   <td>1</td>
+               </tr>
+               <tr>
+                   <td>validateInSubmit</td>
+                   <td class="align-l">点击"提交"按钮的时候是否要对表单进行验证</td>
+                   <td>true</td>
+               </tr>
+               <tr>
+                   <td>sendForm</td>
+                   <td class="align-l">表单通过验证的时候，是否需要提交表单</td>
+                   <td>true</td>
+               </tr>
+               <tr>
+                   <td>onKeyup</td>
+                   <td class="align-l">输入放开键盘的时候,是否需要验证(注:该参数对于类型1的验证是不起作用，只对类型2起作用,对于类型2,对于第一次的输入时不进行验证)</td>
+                   <td>false</td>
+               </tr>
+               
+               <tr>
+                   <td>firstInvalidFocus</td>
+                   <td class="align-l">未通过验证的第一个表单元素，是否要获取焦点</td>
+                   <td>true</td>
+               </tr>
+               <tr>
+                   <td>conditional</td>
+                   <td class="align-l">该单词顾名思义就是条件,默认值是空对象“{}”,输入域元素的data-conditional="name"来对应到conditional对象中属性等于name的函数,函数返回true就是验证通过，返回false就是未通过验证</td>
+                   <td>{},一个空对象</td>
+               </tr>
+               <tr>
+                   <td>descriptions</td>
+                   <td class="align-l">默认值是空对象“{}”,用来定义输入域未通过验证的各种状态下的提示文字，通过输入域元素的data-descriptions="name"来对应到descriptions对象中属性名等于name的函数</td>
+                   <td>{},一个空对象</td>
+               </tr>
+               <tr>
+                   <td>eachField</td>
+                   <td class="align-l">表单输入域在执行验证之前,触发该函数,它是提前于eachValidField或者是eachInValidField触发</td>
+                   <td>$.noop,默认一个空函数</td>
+               </tr>
+               <tr>
+                   <td>eachInvalidField</td>
+                   <td class="align-l">所有未通过验证的表单输入域触发该函数</td>
+                   <td>true</td>
+               </tr>
+               <tr>
+                   <td>eachValidField</td>
+                   <td class="align-l">所有的通过验证的表单输入域触发该函数</td>
+                   <td>$.noop,默认一个空函数</td>
+               </tr>
+               <tr>
+                   <td>valid</td>
+                   <td class="align-l">点击“提交”按钮的时候，若表单通过验证，就触发该函数！</td>
+                   <td>$.noop,默认一个空函数</td>
+               </tr>
+               <tr>
+                   <td>invalid</td>
+                   <td class="align-l">点击“提交”按钮的时候，若表单未通过验证，就触发该函数！</td>
+                   <td>$.noop,默认一个空函数</td>
+               </tr>
+           </tbody></table>
+            <div class="tit-level-1">三、拓展方法</div>
+            <table class="demo-table mt15">
+               <tbody><tr>
+                   <th width="20%">方法名</th>
+                   <th width="60%" class="align-l">描述</th>
+                   <th width="20%">注意事项</th>
+               </tr>
+               <tr>
+                   <td>$.mvalidateExtend</td>
+                   <td class="align-l">该方法用来拓展一些输入域的验证,例如:data-validate="phone",那么我们就可以通过:
+                    <p>
+                        </p><pre>$.mvalidateExtend({
+    phone:{
+        required : true,   
+        pattern : /^0?1[3|4|5|8][0-9]\d{8}$/,
+        each:function(){
+           
+        },
+        descriptions:{
+            required : '必填字段',
+            pattern : '请您输入正确的格式'
+        }
+    }
+});
+                        </pre>
+                    <p></p>
+                   </td>
+                   <td></td>
+               </tr>
+           </tbody></table>
+        </div>
+    </div>
+    <div class="footer">
+            <p>Copyright © 蜗牛博客 <span>948061564@qq.com</span> </p>
+            <p class="icp-no"><a href="http://www.miitbeian.gov.cn/" target="_blank">闽ICP备11007881号</a></p>
+    </div>
+    <div class="scrollbtn-list"> 
+        <a href="#" id="J_exchangelink" class="exchangelink" title="交换友情链接">交换友情链接</a>   
+       <!--  <a href="#" id="J_screenzoom"  class="screenzoom" title="宽屏"><i class="iconfont icon-quanping icon-quanping"></i></a> -->
+        <a href="#" title="返回顶部" class="scrolltop" id="J_gotop"><i class="iconfont icon-fanhuidingbu"></i></a>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

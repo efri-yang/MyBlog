@@ -1,0 +1,1 @@
+<div class="dp-comment"><?php comments_template('', true);?></div>

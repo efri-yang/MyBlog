@@ -1,0 +1,1 @@
+<?php include_once("./wp-content/themes/temp1/tempmodule/header.php") ?>

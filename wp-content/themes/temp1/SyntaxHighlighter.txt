@@ -1,0 +1,37 @@
+[css autolinks="false" classname="myclass" collapse="false" firstline="1" gutter="true" highlight="1-3,6,9" htmlscript="false" light="false" padlinenumbers="false" smarttabs="true" tabsize="4" toolbar="true" title="example-filename.php"]
+这里写你的代码
+
+[/css]
+
+
+[code lang="js"]这里写你的代码[/code]
+
+[sourcecode language="plain"]这里写你的代码[/sourcecode]
+
+
+[java]这里写你的代码[/java]
+
+
+
+
+
+<p>
+	<strong><span style="font-size:18px;">一、一级标题</span></strong>
+</p>
+
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="font-size: 16px;"> 1.二级标题</span></strong>
+</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容内容 </p>
+
+
+
+
+
+<div class="dp-exampleBtn">
+						<a href="" class="wn-btn wn-btn-success">Demo</a>
+						<a href="" class="wn-btn wn-btn-success">查看源代码</a>
+					</div>		
+
+
