@@ -617,6 +617,7 @@ body{
 }
 .dp-content p{
 	margin-bottom: 15px;
+	text-indent: 2rem;
 }
 .dp-content .tit-1{
 	font-size: 18px;
@@ -638,9 +639,8 @@ body{
 
 .dp-content .dp-table{
 	border:1px solid #e5e5e5;
-	width:100%;
-	overflow: hidden;
 	table-layout:fixed;
+	width: 100%;
 	word-break:break-all;
 	word-wrap:break-word
 }

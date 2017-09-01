@@ -56,40 +56,135 @@
                     <span class="dp-readnum"><b>14</b>人已阅读</span>
                 </div>
                 <div class="dp-content">
-<!--**********************************  *********************************-->
+                    <!--**********************************  *********************************-->
+                    <p>html5的新增的标签audio，用法其实网上也介绍一大堆，使用过程中经常发现的问题是：自动播放问题,如何页面只运行在微信端那还可以解决：</p>
+
+                    <pre class="brush: javascript">
+<audio id="audio1" src="images/voice/audiott.mp3" autoplay></audio>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+function autoPlayAudio1() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('audio1').play();
+        });
+    }
+autoPlayAudio1();
+</script>
+                    </pre>
+                    <p>可是你一旦运行在ios设备中uc或者是safari浏览器等浏览器当中，那就没办法了解决了！当然这不是本文主要的讲的内容，下面主要介绍一下audio如何分断读取音频达到我们理想的播放效果！！</p>
+
+                    <p>先看下面这个demo</p>
+                    <div class="dp-exampleBtn">
+                        <a class="wn-btn wn-btn-success" href="http://wnworld.com/Mine/BoBingGongJu/mobile/YaoShaiZi.html" target="_blank">移动端Demo</a>
+                    </div>
+                    <p>可以发现在页面记性拖拽按钮的时候，随着骰子的结果播放不同的声音,而所有的音频都在一个文件里面</p>
+                    <p><audio src="http://wnworld.com/Mine/BoBingGongJu/mobile/images/voice/audio.mp3" controls></audio></p>
+                    <p>所以我们需要通过ajax返回的不同的结果进行分断读取播放,代码如下:</p>
+
+
+                    
+<pre class="brush:javascript">
+var Voice=(function(){
+    var audioElem=document.getElementById("J_audio"); //获取页面元素
+    var index=0; //默认初始化第一段
+    var spriteData = { //音频分段对象字面量
+        tt:{
+            start:0,
+            length:1
+        },
+        0: {
+            start: 2.0,
+            length: 2.8
+        },
+        1: {
+            start: 5.2,
+            length: 2.4
+        },
+        2: {
+            start: 8.0,
+            length: 2.7
+        },
+        3: {//四进
+            start: 11.0,
+            length: 3.5
+        },
+        4: {//三红
+            start: 14.6,
+            length: 3.4
+        },
+        
+        5: {//对堂
+            start: 18.0,
+            length: 2.8
+        },
+        6: {//状元
+            start: 22.8,
+            length: 3.2
+        }
+    };
+
+    
+
+    var handler=function(){
+        if (this.currentTime >= spriteData[index].start + spriteData[index].length) {
+            this.pause();
+        }
+    };
+    
+    
+    audioElem.addEventListener('timeupdate', handler, false);
+    
+    var play=function(rank){
+        audioElem.currentTime = spriteData[rank].start;
+        index=rank;
+        audioElem.play(rank);
+
+    };
+
+    var pause=function(){
+         audioElem.pause();
+    };
+
+    var ready=function(){
+        if(audioElem.readyState==4){
+            return true;
+        }
+        return false;
+    }
+    return {
+        play:play,
+        pause:pause,
+        isReady:ready
+    }
+})();                  
+</pre>
+<p>原理很简单就是：在播放的时候，播放制定的区间，实时监听，如果播放的时间达到制定区间的末端，那么自动停止！</p>
+<p>handler函数：在实时监听，判断播放的时间是否达到制定区间的末端，达到了就停止！</p>
+
                     <p class="tit-1">
                         一、按照正常的文件管道流的方式,很容易在工程化中如下配置：
-                         <!--
-gulp.task("clean",function(){
-   del(".tmp/**/*");
-});
-gulp.task("default",["clean","html","sass"]);
-
-gulp.task('sass',function() {}) 
-gulp.task('html',function() {}) 
-gulp.task("clean",function(){
-  return del(".tmp/**/*");
-});
-                           -->
-
-<p class="con-1">
-    这是我们正常的书写方式！可以运行的结果却出现第一次不报错，第二次报错了:
-</p>               
-<p class="tit-2">
-    1.二级标题
-</p>
-
-<p class="con-2">
-    二级标题内容
-</p>
+                        <p class="con-1">
+                            这是我们正常的书写方式！可以运行的结果却出现第一次不报错，第二次报错了:
+                        </p>
+                        <p class="tit-2">
+                            1.二级标题
+                        </p>
+                        <p class="con-2">
+                            二级标题内容
+                        </p>
                     </p>
                     <p class="tit-2">
                         1.二级标题
                     </p>
-
-        <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容内容
-        </p>
                     <table class="dp-table">
                         <tr>
                             <th>文本1</th>
@@ -100,7 +195,13 @@ gulp.task("clean",function(){
                             <td>内容2</td>
                         </tr>
                     </table>
-<!--**********************************  *********************************-->
+                    <pre class="brush: javascript">
+                        alert("xxx")
+                    </pre>
+                    <pre class="brush: css">
+                        alert("xxx")
+                    </pre>
+                    <!--**********************************  *********************************-->
                 </div>
                 <div class="dp-share  clearfix">
                     <div class="dp-share-detail">
@@ -181,6 +282,12 @@ gulp.task("clean",function(){
         <!--  <a href="#" id="J_screenzoom"  class="screenzoom" title="宽屏"><i class="iconfont icon-quanping icon-quanping"></i></a> -->
         <a href="#" title="返回顶部" class="scrolltop" id="J_gotop"><i class="iconfont icon-fanhuidingbu"></i></a>
     </div>
+    <script type="text/javascript" src="http://wnworld.com/wp-content/themes/temp1/plugin/syntaxhighlighter3/dist/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wnworld.com/wp-content/themes/temp1/plugin/syntaxhighlighter3/styles/shCore.css">
+    <link rel="stylesheet" type="text/css" href="http://wnworld.com/wp-content/themes/temp1/plugin/syntaxhighlighter3/styles/shCoreFadeToGrey.css">
+    <script type="text/javascript">
+    SyntaxHighlighter.all();
+    </script>
 </body>
 
 </html>
